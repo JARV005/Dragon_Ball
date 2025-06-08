@@ -1,0 +1,191 @@
+/* Estructura básica */
+body {
+  background-color: #fefefe;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/*Header*/
+.header__titulo {
+  text-align: center;
+  background-color: orange;
+  color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+#titulo {
+  border-bottom: 3px solid red;
+}
+
+.introduccion__parrafo {
+  text-align: center;
+  margin: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.introduccion__boton {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: 2px solid darkred;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px gray;
+  cursor: pointer;
+}
+
+/* Animación del Kamehameha */
+.kameha__contenedor {
+  position: relative;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kameha__goku {
+  width: 200px;
+  position: relative;
+  z-index: 1;
+}
+
+.kameha__onda {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 0;
+  height: 40px;
+  background: cyan;
+  box-shadow: 0 0 20px cyan;
+  animation: kame 2s infinite;
+}
+
+@keyframes kame {
+  0% { width: 0; opacity: 0.6; }
+  50% { width: 300px; opacity: 1; }
+  100% { width: 0; opacity: 0.6; }
+}
+
+/* Galería */
+.galeria {
+  padding: 30px;
+  background-color: #f3f3f3;
+}
+
+.galeria__titulo {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0047ab;
+}
+
+.galeria__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.galeria__imagen {
+  width: 200px;
+  height: 200px;
+  border: 3px solid #ccc;
+  border-radius: 8px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.galeria__imagen:hover {
+  transform: scale(1.05);
+  border-color: orange;
+}
+
+/*Pseudoelemento*/
+.introduccion__parrafo::first-letter {
+  font-size: 2em;
+  color: rgb(255, 115, 0);
+}
+
+/*RESPONSIVE*/
+
+/* Escritorio (1024px en adelante) */
+@media (min-width: 1024px) {
+  .galeria__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .kameha__goku {
+    width: 250px;
+  }
+
+  .kameha__onda {
+    top: 0px;
+    left: 0px;
+  }
+
+  .galeria__imagen {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* Tablets (entre 768px y 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .galeria__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kameha__goku {
+    width: 200px;
+  }
+
+  .kameha__onda {
+    top: 0px;
+    left: 0px;
+  }
+
+  .galeria__imagen {
+    width: 180px;
+    height: 180px;
+  }
+
+  .introduccion__parrafo {
+    font-size: 16px;
+  }
+}
+
+/* Móviles (menor o igual a 767px) */
+@media (max-width: 767px) {
+  .galeria__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kameha__goku {
+    width: 0x;
+  }
+
+  .kameha__onda {
+    top: 0px;
+    left: 0px;
+  }
+
+  .galeria__imagen {
+    width: 100%;
+    height: auto;
+  }
+
+  .introduccion__parrafo {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .introduccion__boton {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .galeria__titulo {
+    font-size: 20px;
+  }
+}
