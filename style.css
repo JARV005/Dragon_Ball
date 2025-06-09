@@ -1,4 +1,4 @@
-/* Estructura básica */
+/* Basic page structure and global font */
 body {
   background-color: #fefefe;
   font-family: 'Arial', sans-serif;
@@ -6,7 +6,7 @@ body {
   padding: 0;
 }
 
-/*Header*/
+/* Header styling */
 .header__titulo {
   text-align: center;
   background-color: orange;
@@ -14,10 +14,13 @@ body {
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
+/* Adds red underline to the title */
 #titulo {
   border-bottom: 3px solid red;
 }
 
+/* Introductory paragraph styling */
 .introduccion__parrafo {
   text-align: center;
   margin: 20px;
@@ -25,6 +28,7 @@ body {
   color: #333;
 }
 
+/* Call-to-action button styling */
 .introduccion__boton {
   display: block;
   margin: 0 auto;
@@ -37,7 +41,7 @@ body {
   cursor: pointer;
 }
 
-/* Animación del Kamehameha */
+/* Kamehameha section - container */
 .kameha__contenedor {
   position: relative;
   margin-top: 40px;
@@ -46,12 +50,14 @@ body {
   align-items: center;
 }
 
+/* Goku image settings */
 .kameha__goku {
   width: 200px;
   position: relative;
   z-index: 1;
 }
 
+/* Energy wave animation effect */
 .kameha__onda {
   position: relative;
   left: 0px;
@@ -63,13 +69,14 @@ body {
   animation: kame 2s infinite;
 }
 
+/* Keyframe animation for the kamehameha wave */
 @keyframes kame {
   0% { width: 0; opacity: 0.6; }
   50% { width: 300px; opacity: 1; }
   100% { width: 0; opacity: 0.6; }
 }
 
-/* Galería */
+/* Gallery container and grid */
 .galeria {
   padding: 30px;
   background-color: #f3f3f3;
@@ -88,6 +95,7 @@ body {
   padding: 0 20px;
 }
 
+/* Image card design with hover effects */
 .galeria__imagen {
   width: 200px;
   height: 200px;
@@ -101,15 +109,15 @@ body {
   border-color: orange;
 }
 
-/*Pseudoelemento*/
+/* Styling for the first letter of intro paragraph */
 .introduccion__parrafo::first-letter {
   font-size: 2em;
   color: rgb(255, 115, 0);
 }
 
-/*RESPONSIVE*/
+/* RESPONSIVE DESIGN */
 
-/* Escritorio (1024px en adelante) */
+/* Desktop screens (1024px and above) */
 @media (min-width: 1024px) {
   .galeria__grid {
     grid-template-columns: repeat(3, 1fr);
@@ -130,7 +138,7 @@ body {
   }
 }
 
-/* Tablets (entre 768px y 1023px) */
+/* Tablet screens (768px to 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .galeria__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -155,14 +163,14 @@ body {
   }
 }
 
-/* Móviles (menor o igual a 767px) */
+/* Mobile screens (767px and below) */
 @media (max-width: 767px) {
   .galeria__grid {
     grid-template-columns: 1fr;
   }
 
   .kameha__goku {
-    width: 0x;
+    width: 0x; /* Possible typo: "0x" should be "0px" or another valid value */
   }
 
   .kameha__onda {
